@@ -1,8 +1,4 @@
-# Template-Repository
-
-README Template
-# Project Name
-A clear description of what your project does and why it exists.
+# Trends in recording of cardiovascular risk assessment among adults without prior cardiovascular disease: a population-based cohort study
 
 ## Table of Contents
 - [About](#about)
@@ -16,15 +12,13 @@ A clear description of what your project does and why it exists.
 - [Licence](#licence)
 
 ## About
-A more detailed description of your project including:
-- What problem it solves
-- Any relevant background information
-- Links to related projects or publications
+- In this population-based cohort study, we examined temporal trends in recorded ASSIGN scores among individuals without established cardiovascular disease, and assessed variation by sociodemographic groups. Additionally, we explored the provision of lipid-lowering therapy among individuals identified as high-risk.
+- Related publications: https://doi.org/10.1186/s12872-026-05572-8
 
 ## Installation
 Step by step instructions to get your code running:
 1. Clone the repository
-git clone https://github.com/yourorganisation/yourrepository.git
+git clone https://github.com/iPREVENT-CVD/iPREVENT-ASSIGN.git
 
 2. Install R
 Download and install R from https://www.r-project.org/
@@ -33,22 +27,19 @@ Recommended version: R 4.0+
 3. Install RStudio (Recommended)
 Download from https://www.rstudio.com/
 
-4. Install required packages. At the start of the script required packages are stated. If these have not already been downloaded follow these steps to install packages prior to running scripts: (1) Open R or RStudio (2) run install.packages(c("package1", "package2"))
+4. Install required packages. At the start of the script required packages are stated. 
 
 ## Usage
-How to use the code with examples:
-"example code or commands here"
+The R code provided include the analysis were 1) calculated the annual prevalence of the primary outcome by financial year, 2) calculated the annual prevalence of the primary outcome by financial year and stratified by sociodemographic subgroups, and 3) the adjusted logistic regression models with a generalized estimating equation approach where we evaluated subgroup comparisons and time trends. Additionally, placeholder functions are provided that were used in the R scripts to run the models. For each analysis, an R script is available to create the figures as presented in the manuscript.
 
 
 ## Project Structure
 ```
-├── data/        # Input data files - if applicable
-
-├── src/         # R scripts
-
-├── tests/       # Test files - if applicable
-
-├── docs/        # Documentation - if applicable
+├── function_xx/                         # R scripts
+├── function_xx/                         # R scripts
+├── 001_model_timetrends/                # R scripts
+├── 002_model_subgroups/                 # R scripts
+├── 003_model_adjusted_analysis/         # R scripts
 
 └── README.md    # This file
 ```
@@ -58,27 +49,25 @@ How to use the code with examples:
 - RStudio (recommended)
 - Packages required:
    - tidyverse
-     
+   - geepack     
 
-## Authors
-- Your Name - University of Edinburgh
-- Collaborator Name - University of Edinburgh
+## Authors R code
+- Marie de Bakker - University of Edinburgh
+- Iona Lyell - University of Edinburgh
+- Dorien Kimenai - University of Edinburgh
+- A full list of the authors of the manuscript can be found here: placeholder
 
 ## Acknowledgements
-- Funding source (e.g. MRC, Wellcome Trust)
-- Any collaborators or contributors
-- Related projects that inspired this work
+This work was funded by the British Heart Foundation Intermediate Basic Science Research Fellowship (FS/IBSRF/23/25161) held by DMK, and MdB and DMK are supported by a Research Excellence Award from the British Heart Foundation (RE/24/130012). IL is supported by a Clinical Research Training Fellowship from the British Heart Foundation (FS/CRTF/25/24788). NL is supported by an Health Data Research UK personal fellowship. This work is affiliated to Health Data Research UK (Big Data for Complex Disease- HDR-23012), which is funded by the Medical Research Council (UKRI), the National Institute for Health Research, the British Heart Foundation, Cancer Research UK, the Economic and Social Research Council (UKRI), the Engineering and Physical Sciences Research Council (UKRI), Health and Care Research Wales, Chief Scientist Office of the Scottish Government Health and Social Care Directorates, and Health and Social Care Research and Development Division (Public Health Agency, Northern Ireland). PW is supported by grant funding from the Chief Scientist Office, Scottish Government (HIPS/24/31). This work was supported by DataLoch (dataloch.org), which is core-funded by the Data-Driven Innovation programme within the Edinburgh and South East Scotland City Region Deal (ddi.ac.uk). 
 
 ## Citation
 If you use this code in your research please cite:
-Copy Code
-Author(s), Year, Project Name, University of Edinburgh DOI or URL if available
-
+Placeholder
 
 ## Licence
 This project is licensed under the [MIT Licence](LICENSE)
 
 ## Contact
 For questions or issues please contact:
-- Your Name - your.email@ed.ac.uk
+- Dorien Kimenai - dorien.kimenai@ed.ac.uk
 
