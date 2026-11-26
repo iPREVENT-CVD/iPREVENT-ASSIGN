@@ -30,16 +30,21 @@ Download from https://www.rstudio.com/
 4. Install required packages. At the start of the script required packages are stated. 
 
 ## Usage
-The R code provided include the analysis were 1) calculated the annual prevalence of the primary outcome by financial year, 2) calculated the annual prevalence of the primary outcome by financial year and stratified by sociodemographic subgroups, and 3) the adjusted logistic regression models with a generalized estimating equation approach where we evaluated subgroup comparisons and time trends. Additionally, placeholder functions are provided that were used in the R scripts to run the models. For each analysis, an R script is available to create the figures as presented in the manuscript.
+The R code provided include the following analysis 1) the annual prevalence of the primary outcome by financial year and by subgroups, 2) the adjusted logistic regression models with a generalized estimating equation approach where we evaluated subgroup comparisons and time trends, 3) provision of lipid-lowering therapy in high-risk individuals, and 4) the ASSIGN score recording among individuals who had an encounter with primary care services compared to those who did not in the relevant financial year. Additionally, six functions are provided that were used in the R scripts to run the models. For each analysis, R scripts are available to create the figures as presented in the manuscript.
 
 
 ## Project Structure
 ```
-├── function_xx/                         # R scripts
-├── function_xx/                         # R scripts
-├── 001_model_timetrends/                # R scripts
-├── 002_model_subgroups/                 # R scripts
-├── 003_model_adjusted_analysis/         # R scripts
+├── function_df_fincancial_years/                         # R scripts
+├── function_financial_year_plot/                         # R scripts
+├── function_fit_gee_model/                               # R scripts
+├── function_forest_plot/                                 # R scripts
+├── function_gp_interaction_plot/                         # R scripts
+├── helper_functions/                                     # R scripts
+├── 001_time_trends_plots/                                # R scripts
+├── 002_gee_models/                                       # R scripts
+├── 003_lipidlowering_therapy_plots/                      # R scripts
+├── 004_GP_interaction_plot/                              # R scripts
 
 └── README.md    # This file
 ```
