@@ -1,13 +1,4 @@
 rm(list=ls())
-todays_date <- "2026.04.29"
-
-####################################################################################################################################
-# General information
-####################################################################################################################################
-
-# Author: Marie de Bakker
-# Date: 01/10/2024
-# Information: data cleaning
 
 ####################################################################################################################################
 # Packages
@@ -25,24 +16,17 @@ library(Hmisc)
 library(scales)
 
 ####################################################################################################################################
-# Additional information
-####################################################################################################################################
-
-
-
-####################################################################################################################################
 # Load data into R
 ####################################################################################################################################
 
 # load functions
-source("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Scripts/helper_functions.R")
-source("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Scripts/gp_interaction_plot.R")
+# helper_functions
+# function_gp_interaction_plot
 
 ####################################################################################################################################
 # Figure 1
 ####################################################################################################################################
 
-df_gp <- read.csv("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Datasets/2026.04.13_gp_activity_valid.csv")
 variable_of_interest <- c("assignvalid_appt_group")
 df_gp$assignvalid_appt_group <- as.factor(df_gp$assignvalid_appt_group)
 
@@ -51,19 +35,12 @@ df_gp$assignvalid_appt_group <- relevel(df_gp$assignvalid_appt_group, "ASSIGN Y,
 df_gp$assignvalid_appt_group <- relevel(df_gp$assignvalid_appt_group, "ASSIGN N, Appt N")
 df_gp$assignvalid_appt_group <- relevel(df_gp$assignvalid_appt_group, "ASSIGN N, Appt Y")
 
-
-
 # total population -------------------------------------------------------------------------
 df_1 <- df_gp[, c("year", "assignvalid_appt_group", "n")]
 plot_1 <- gp_interaction_plot(dataset = df_1,
                               title = "", 
                               variable_of_interest = variable_of_interest)
 plot_1
-
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure 4.pdf"),
-    width = 11, height = 6)
-plot_1
-dev.off()
 
 # age groups --------------------------------------------------------------------------------------
 # age 1
@@ -90,11 +67,6 @@ plot_age_3 <- gp_interaction_plot(dataset = df_age_3,
 plot_age <- plot_grid(plot_age_1, plot_age_2, plot_age_3, ncol = 2, nrow = 2)
 plot_age
 
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure SX_GP encounter_age.pdf"),
-    width = 11, height = 12)
-plot_age
-dev.off()
-
 # sex --------------------------------------------------------------------------------------
 # men
 df_m <- df_gp[, c("year", "assignvalid_appt_group", "n_male")] %>% rename(n = n_male)
@@ -114,12 +86,6 @@ plot_f
 
 plot_sex <- plot_grid(plot_f, plot_m, ncol = 2)
 plot_sex
-
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure SX_GP encounter_sex.pdf"),
-    width = 11, height = 6)
-plot_sex
-dev.off()
-
 
 # simd --------------------------------------------------------------------------------------
 # simd 1
@@ -145,12 +111,6 @@ plot_simd_3 <- gp_interaction_plot(dataset = df_simd_3,
 
 plot_simd <- plot_grid(plot_simd_1, plot_simd_2, plot_simd_3, ncol = 2, nrow = 2)
 plot_simd
-
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure SX_GP encounter_simd.pdf"),
-    width = 11, height = 12)
-plot_simd
-dev.off()
-
 
 # ethnicity --------------------------------------------------------------------------------------
 # asian
@@ -190,11 +150,6 @@ plot_o <- gp_interaction_plot(dataset = df_o,
 
 plot_ethnicity <- plot_grid(plot_a, plot_b, plot_m, plot_w, plot_o, ncol = 2, nrow = 3)
 plot_ethnicity
-
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure SX_GP encounter_ethnicity.pdf"),
-    width = 11, height = 18)
-plot_ethnicity
-dev.off()
 
 
 
