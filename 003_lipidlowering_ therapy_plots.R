@@ -1,13 +1,4 @@
 rm(list=ls())
-todays_date <- "2026.04.28"
-
-####################################################################################################################################
-# General information
-####################################################################################################################################
-
-# Author: Marie de Bakker
-# Date: 01/10/2024
-# Information: data cleaning
 
 ####################################################################################################################################
 # Packages
@@ -26,27 +17,19 @@ library(scales)
 library(flextable)
 library(officer)
 
-####################################################################################################################################
-# Additional information
-####################################################################################################################################
-
-
 
 ####################################################################################################################################
 # Load data into R
 ####################################################################################################################################
 
-# load read codes into R
-source("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Scripts/helper_functions.R")
-source("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Scripts/tax_year_plot.R")
-source("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Scripts/df_tax_years.R")
-
+# load functions
+# helper_functions
+# function_financial_year_plot
+# function_df_financial_years
 
 ####################################################################################################################################
 # Plot
 ####################################################################################################################################
-
-df_plot <- read.csv("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Datasets/2026.04.08 table_treatment.csv")
 
 df_plot$group <- as.factor(df_plot$group)
 df_plot$group <- relevel(df_plot$group, "Other")
@@ -94,8 +77,4 @@ plot <- ggplot(df_long, aes(x = group, y = prop, fill = treatment_status)) +
 
 plot
 
-pdf(file = paste0("C:/Users/marie/OneDrive - University of Edinburgh/Temporary documents_when working form home/004_iPREVENT-PP/Tables and figures/", todays_date, " Figure 3.pdf"),
-    width = 11, height = 6)
-plot
-dev.off()
 
